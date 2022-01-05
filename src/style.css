@@ -18,3 +18,26 @@ body
     left: 0;
     outline: none;
 }
+
+.round-button {
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin: 20pt;
+    z-index: 2;
+    width:83px;
+    height:83px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    color:#000000;
+    text-decoration:none;
+    background: #ffffff8a;
+    font-size:18px;
+    display: flex;
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+}
+.round-button:hover {
+    background: #ffffffd2;
+}
