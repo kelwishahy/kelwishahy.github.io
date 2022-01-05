@@ -55,19 +55,14 @@ module.exports = {
             },
 
             // Images
-            {
-                test: /\.(jpg|png|gif|svg)$/,
-                use:
-                [
-                    {
-                        loader: 'file-loader',
-                        options:
-                        {
-                            outputPath: 'assets/images/'
-                        }
-                    }
-                ]
-            },
+            // {
+            //     test: /\.(jpe?g|png|gif|svg)$/i, 
+            //     loader: 'file-loader',
+            //     exclude: /models/,
+            //     options: {
+            //         outputPath: 'assets/images/'
+            //     }
+            // },
 
             // Fonts
             {
@@ -82,6 +77,26 @@ module.exports = {
                         }
                     }
                 ]
+            },
+
+            // Shaders
+            {
+                test: /\.(glsl|frag|vert)$/,
+                use: ['glslify-import-loader', 'raw-loader', 'glslify-loader']
+            },
+
+            // Models
+
+            {
+                test: /\.gltf$/,
+                loader: '@vxna/gltf-loader',
+                options: { inline: true }
+            },
+
+            {
+                test: /\.(bin|jpe?g|png)$/,
+                loader: 'file-loader',
+                options: { esModule: false }
             }
         ]
     }
